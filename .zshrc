@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/matthewtirrell/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -109,3 +109,10 @@ alias my-stop="sudo launchctl unload -F /Library/LaunchDaemons/com.oracle.oss.my
 alias v='cd ~/Projects/visionair;ls'
 alias h='cd ~;ls'
 alias dl='cd ~/DevLeague;ls'
+
+
+source "/home/aukai/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+# change node source location
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
