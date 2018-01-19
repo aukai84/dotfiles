@@ -5,12 +5,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
-Plug 'mattn/emmet-vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'alampros/vim-styled-jsx'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -19,8 +21,17 @@ call plug#end()
 "  set clipboard=unnamed " copy to the system clipboard
 "endif
 
+"set encoding to show glyphs
+set encoding=utf8
+
+"set font for icons
+set guifont=DroidSansMono\ Nerd\ Font\ 11
+
 "airline configurations
 let g:airline_theme='simple'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' | '
+let g:airline_powerline_fonts = 1
 set laststatus=2
 set ttimeoutlen=50
 
@@ -41,10 +52,6 @@ set whichwrap+=<,>,h,l
 if has('mouse')
 	  set mouse=a
   endif
-if &t_Co > 2 || has("gui_running")
-	  syntax on
-	    set hlsearch
-    endif
 "--------------------
 "GENERAL SETTINGS
 "--------------------

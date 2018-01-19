@@ -48,7 +48,7 @@ ZSH_THEME="amuse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx git npm brew github node sublime)
+plugins=(git npm github node)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,7 +92,6 @@ function newGithubRepo() {
 
 
 # Example aliases
-alias tmuxcheat="vim ~/tmux-files/2961058/tmux-cheatsheet.markdown"
 alias rtmux="tmux source-file ~/.tmux.conf"
 alias szsh="source ~/.zshrc"
 alias tmuxconfig="vim ~/.tmux.conf"
