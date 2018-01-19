@@ -101,6 +101,9 @@ colorscheme molokai
 
 set wildmenu            " visual autocomplete for command menu
 
+"set transparent background
+hi Normal guibg=NONE ctermbg=NONE
+
 "Nerd Tree Configurations
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
