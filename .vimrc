@@ -129,7 +129,7 @@ let g:user_emmet_leader_key=','
 "styled-jsx/template syntax highlighting
 
 call jspretmpl#register_tag('css', 'css')
-autocmd FileType javascript JsPreTmpl scss
+autocmd FileType javascript JsPreTmpl css
 
 let g:jsx_ext_required = 0
 let g:vim_jsx_pretty_enable_jsx_highlight = 1
