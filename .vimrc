@@ -1,20 +1,18 @@
 "vim plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
+Plug 'jesstelford/vim-js-pretty-template'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'alampros/vim-styled-jsx'
-Plug 'jesstelford/vim-js-pretty-template'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -31,7 +29,7 @@ set encoding=utf8
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 "airline configurations
-let g:airline_theme='simple'
+let g:airline_theme='deus'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' | '
 let g:airline_powerline_fonts = 1
@@ -105,9 +103,9 @@ let mapleader = "\<Space>"
 syntax enable
 set background=dark
 set t_Co=256
-let g:molokai_original = 1
+"let g:molokai_original = 1
 let g:rehash256 = 1
-colorscheme molokai
+colorscheme molokai 
 
 set wildmenu            " visual autocomplete for command menu
 
@@ -134,5 +132,7 @@ call jspretmpl#register_tag('css', 'css')
 autocmd FileType javascript JsPreTmpl scss
 
 let g:jsx_ext_required = 0
+let g:vim_jsx_pretty_enable_jsx_highlight = 1
+let g:vim_jsx_pretty_colorful_config = 1
 let g:xml_syntax_folding = 1
 
