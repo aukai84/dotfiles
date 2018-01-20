@@ -102,7 +102,7 @@ alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.p
 alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias my-start="sudo launchctl load -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist"
 alias my-stop="sudo launchctl unload -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist"
-
+alias robomongo="/usr/local/bin/robomongo/bin/robo3t"
 
 # Frequent directories
 alias v='cd ~/Projects/visionair;ls'
