@@ -10,8 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="amuse"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# sensitive completion must be off. _ and - will be interchangeable.  # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -103,6 +102,7 @@ alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.p
 alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias my-start="sudo launchctl load -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist"
 alias my-stop="sudo launchctl unload -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist"
+
 
 # Frequent directories
 alias v='cd ~/Projects/visionair;ls'
