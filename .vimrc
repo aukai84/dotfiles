@@ -12,6 +12,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'alampros/vim-styled-jsx'
+Plug 'jesstelford/vim-js-pretty-template'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -124,6 +127,11 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:user_emmet_leader_key=','
+
+"styled-jsx/template syntax highlighting
+
+call jspretmpl#register_tag('css', 'css')
+autocmd FileType javascript JsPreTmpl scss
 
 let g:jsx_ext_required = 0
 let g:xml_syntax_folding = 1
