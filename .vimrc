@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'flazz/vim-colorschemes'
+Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
