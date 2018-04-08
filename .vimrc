@@ -4,9 +4,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
@@ -14,6 +16,8 @@ Plug 'jesstelford/vim-js-pretty-template'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'alampros/vim-styled-jsx'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -27,8 +31,9 @@ call plug#end()
 set encoding=utf8
 
 "set font for icons
-set guifont=DroidSansMono\ Nerd\ Font\ 11
+"set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 
+let g:indentLine_setColors = 0
 "airline configurations
 let g:airline_theme='deus'
 let g:airline#extensions#tabline#left_sep = ' '
@@ -78,6 +83,18 @@ set number
 
 " How many tenths of a second to blink when matching brackets
  set mat=2
+
+" set tabs to have 4 spaces
+ set ts=4
+
+" indent when moving ot the next line while writing code
+ set autoindent
+
+" show a visual line under the cursor's current line
+ set cursorline
+
+" enable all Python syntax highlighting features
+ let python_highlight_all = 1
 
 " No annoying sound on errors
  set noerrorbells
