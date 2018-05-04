@@ -1,7 +1,12 @@
 "vim plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'flazz/vim-colorschemes'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'posva/vim-vue'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
@@ -14,10 +19,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'jesstelford/vim-js-pretty-template'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'alampros/vim-styled-jsx'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -123,7 +125,7 @@ set background=dark
 set t_Co=256
 "let g:molokai_original = 1
 let g:rehash256 = 1
-colorscheme molokai 
+colorscheme palenight 
 
 set wildmenu            " visual autocomplete for command menu
 

@@ -90,7 +90,8 @@ function newGithubRepo() {
 
 
 
-# Example aliases
+
+#terminal config alias
 alias rtmux="tmux source-file ~/.tmux.conf"
 alias szsh="source ~/.zshrc"
 alias tmuxconfig="vim ~/.tmux.conf"
@@ -98,10 +99,15 @@ alias vimconfig="vim ~/.vimrc"
 alias zshconfig="vim ~/.zshrc"
 alias nr=newGithubRepo
 alias ohmyzsh="vim ~/.oh-my-zsh"
+
+#shell scripts alias
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias my-start="sudo launchctl load -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist"
 alias my-stop="sudo launchctl unload -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist"
+alias jenkins-start="sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist"
+alias jenkins-stop="sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist"
+alias jenkins-docker="~/scripts/jenkins-docker.sh"
 
 # Frequent directories
 alias v='cd ~/Projects/visionair;ls'
