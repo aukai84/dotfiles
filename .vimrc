@@ -21,6 +21,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'jesstelford/vim-js-pretty-template'
 Plug 'maxmellon/vim-jsx-pretty'
+" post install (yarn install | npm install)
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'alampros/vim-styled-jsx'
 Plug 'ryanoasis/vim-devicons'
 

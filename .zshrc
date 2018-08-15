@@ -94,11 +94,11 @@ function newGithubRepo() {
 #terminal config alias
 alias rtmux="tmux source-file ~/.tmux.conf"
 alias szsh="source ~/.zshrc"
-alias tmuxconfig="vim ~/.tmux.conf"
-alias vimconfig="vim ~/.vimrc"
-alias zshconfig="vim ~/.zshrc"
+alias tmuxconfig="nvim ~/.tmux.conf"
+alias vimconfig="nvim ~/.vimrc"
+alias zshconfig="nvim ~/.zshrc"
 alias nr=newGithubRepo
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 #shell scripts alias
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
@@ -108,6 +108,13 @@ alias my-stop="sudo launchctl unload -F /Library/LaunchDaemons/com.oracle.oss.my
 alias jenkins-start="sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist"
 alias jenkins-stop="sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist"
 alias jenkins-docker="~/scripts/jenkins-docker.sh"
+alias rmt-connect="ssh -i ~/.pem/056-RMT.pem ec2-user@rmthost"
+alias vim="nvim"
+alias docker-restart="docker-compose down && docker-compose up --build"
+
+#set gitlab vpn hosts
+alias use-vpn="~/scripts/use-vpn.sh"
+alias close-vpn="~/scripts/close-vpn.sh"
 
 # Frequent directories
 alias v='cd ~/Projects/visionair;ls'
