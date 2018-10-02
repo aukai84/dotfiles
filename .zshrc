@@ -110,8 +110,12 @@ alias jenkins-stop="sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.
 alias jenkins-docker="~/scripts/jenkins-docker.sh"
 alias rmt-connect="ssh -i ~/.pem/056-RMT.pem ec2-user@rmthost"
 alias vim="nvim"
-alias docker-restart="docker-compose down && docker-compose up --build"
+alias docker-restart="docker-compose build && docker-compose down && docker-compose up"
+alias docker-expres="docker exec -it express-container sh -c"
+alias docker-client="docker exec -it client-container sh -c"
 
+#Dynamics Integration
+alias sync-dynamics="rsync -rave 'ssh -i ~/.pem/056-RMT.pem' ~/Projects/S2S-Dynamics-Integration ec2-user@rmthost:/jenkins/"
 #set gitlab vpn hosts
 alias use-vpn="~/scripts/use-vpn.sh"
 alias close-vpn="~/scripts/close-vpn.sh"
