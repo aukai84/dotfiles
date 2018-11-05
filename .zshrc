@@ -109,7 +109,6 @@ alias jenkins-start="sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.p
 alias jenkins-stop="sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist"
 alias jenkins-docker="~/scripts/jenkins-docker.sh"
 alias rmt-connect="ssh -i ~/.pem/056-RMT.pem ec2-user@rmthost"
-alias vim="nvim"
 alias docker-restart="docker-compose build && docker-compose down && docker-compose up"
 alias docker-expres="docker exec -it express-container sh -c"
 alias docker-client="docker exec -it client-container sh -c"
@@ -127,8 +126,12 @@ alias dl='cd ~/DevLeague;ls'
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
-prompt spaceship
+#prompt spaceship
 
 # Set zsh auto suggest and syntax highlighting
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#$source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
