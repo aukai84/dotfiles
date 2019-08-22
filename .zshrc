@@ -4,6 +4,8 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+export EDITOR='nvim'
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -94,11 +96,11 @@ function newGithubRepo() {
 #terminal config alias
 alias rtmux="tmux source-file ~/.tmux.conf"
 alias szsh="source ~/.zshrc"
-alias tmuxconfig="nvim ~/.tmux.conf"
-alias vimconfig="nvim ~/.vimrc"
-alias zshconfig="nvim ~/.zshrc"
+alias tmuxconfig="vim ~/.tmux.conf"
+alias vimconfig="vim ~/.vimrc"
+alias zshconfig="vim ~/.zshrc"
 alias nr=newGithubRepo
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
 #shell scripts alias
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
@@ -112,17 +114,50 @@ alias rmt-connect="ssh -i ~/.pem/056-RMT.pem ec2-user@rmthost"
 alias docker-restart="docker-compose build && docker-compose down && docker-compose up"
 alias docker-expres="docker exec -it express-container sh -c"
 alias docker-client="docker exec -it client-container sh -c"
+alias vim="nvim"
+
+#tmux alias
+alias tmux-webmocha="tmux attach -t webmocha"
+alias tmux-readiness-roadmap="tmux attach -t readiness-roadmap"
+
+#git alias
+alias gclean="git branch --merged| egrep -v '(^\*|master|production)' | xargs git branch -d"
 
 #Dynamics Integration
 alias sync-dynamics="rsync -rave 'ssh -i ~/.pem/056-RMT.pem' ~/Projects/S2S-Dynamics-Integration ec2-user@rmthost:/jenkins/"
+
 #set gitlab vpn hosts
 alias use-vpn="~/scripts/use-vpn.sh"
 alias close-vpn="~/scripts/close-vpn.sh"
+
+#brand central ssh commands
+alias bc-tunnel-production="ssh -N -L 27020:localhost:27017 bc-production"
+alias bc-tunnel-staging="ssh -N -L 27021:localhost:27017 bc-staging"
+alias bc-tunnel-dev="ssh -N -L 27022:localhost:27017 bc-dev"
+
+function testEncrypt() {
+    echo "First Parameter $1"
+    echo "Second Parameter $2"
+    echo "Edited param $1.aes"
+}
+
+#openssl encryption
+function encrypt() {
+  openssl aes-256-cbc -salt -in "$1" -out 'encrypted.aes' && mv 'encrypted.aes' "$1.aes" 
+}
+
+function decrypt() {
+  openssl aes-256-cbc -d -salt -in "$1" -out "$2" && rm "$1";
+}
+
+#secrets/keys
+alias generatekey="head /dev/urandom | shasum -a 512"
 
 # Frequent directories
 alias v='cd ~/Projects/visionair;ls'
 alias h='cd ~;ls'
 alias dl='cd ~/DevLeague;ls'
+alias hd='cd ~/Webmocha/honeydesk;ls'
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
@@ -135,3 +170,19 @@ autoload -U promptinit; promptinit
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# adding flutter to PATH
+export PATH=~/bin/flutter/bin:$PATH
+export PATH=~/Desktop/Applications:$PATH
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/matthewtirrell/Webmocha/MochaPets/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/matthewtirrell/Webmocha/MochaPets/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/matthewtirrell/Webmocha/MochaPets/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/matthewtirrell/Webmocha/MochaPets/node_modules/tabtab/.completions/sls.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /Users/matthewtirrell/Desktop/Applications/vault vault
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

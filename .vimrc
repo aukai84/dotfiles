@@ -37,9 +37,10 @@ call plug#end()
 set encoding=utf8
 
 "set font for icons
-"set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+set guifont=DroidSansMono_for_Powerline_Nerd_Font_Complete:h11
 
 let g:indentLine_setColors = 0
+
 "airline configurations
 let g:airline_theme='deus'
 let g:airline#extensions#tabline#left_sep = ' '
