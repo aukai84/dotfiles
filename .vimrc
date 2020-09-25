@@ -19,9 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
-Plug 'jesstelford/vim-js-pretty-template'
 Plug 'maxmellon/vim-jsx-pretty'
-" post install (yarn install | npm install)
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'alampros/vim-styled-jsx'
 Plug 'ryanoasis/vim-devicons'
@@ -150,11 +148,6 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:user_emmet_leader_key=','
-
-"styled-jsx/template syntax highlighting
-
-call jspretmpl#register_tag('css', 'css')
-autocmd FileType javascript JsPreTmpl css
 
 let g:jsx_ext_required = 0
 let g:vim_jsx_pretty_enable_jsx_highlight = 1

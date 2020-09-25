@@ -49,7 +49,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git postgresql npm github node zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git npm github node zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -134,6 +134,8 @@ alias close-vpn="~/scripts/close-vpn.sh"
 alias bc-tunnel-production="ssh -N -L 27020:localhost:27017 bc-production"
 alias bc-tunnel-staging="ssh -N -L 27021:localhost:27017 bc-staging"
 alias bc-tunnel-dev="ssh -N -L 27022:localhost:27017 bc-dev"
+alias rr-tunnel-staging="ssh -N -L 27023:localhost:27017 rr-staging"
+alias hpe-labs-tunnel-prod="ssh -N -L 27024:localhost:2017 hpe-labs"
 
 function testEncrypt() {
     echo "First Parameter $1"
@@ -174,6 +176,14 @@ export NVM_DIR="$HOME/.nvm"
 # adding flutter to PATH
 export PATH=~/bin/flutter/bin:$PATH
 export PATH=~/Desktop/Applications:$PATH
+
+# adding Android Environment Variables
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /Users/matthewtirrell/Webmocha/MochaPets/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/matthewtirrell/Webmocha/MochaPets/node_modules/tabtab/.completions/serverless.zsh
@@ -184,5 +194,12 @@ export PATH=~/Desktop/Applications:$PATH
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/matthewtirrell/Desktop/Applications/vault vault
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+source /Users/matthewtirrell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#adding rbenv 
+eval "$(rbenv init -)"
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+if [ -f '/Users/matthewtirrell/.netlify/helper/path.zsh.inc' ]; then source '/Users/matthewtirrell/.netlify/helper/path.zsh.inc'; fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
