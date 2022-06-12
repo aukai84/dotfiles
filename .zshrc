@@ -97,7 +97,13 @@ function newGithubRepo() {
    git push --set-upstream origin master
 }
 
+function 7zip() {
+  tar cf - "$@" | 7za a -si "$@".tar.7z;
+}
 
+function 7unzip() {
+  7za x -so "$@" | tar xf -;
+}
 
 
 #terminal config alias
@@ -159,6 +165,14 @@ function encrypt() {
 
 function decrypt() {
   openssl aes-256-cbc -d -salt -in "$1" -out "$2" && rm "$1";
+}
+
+# PacerPro
+pp_precomiple_and_rspec() {
+  bundle exec rake assets:precompile && bundle exec rspec $1
+}
+pp_rspec() {
+  bundle exec rspec $1
 }
 
 #secrets/keys
