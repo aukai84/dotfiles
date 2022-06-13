@@ -1,0 +1,3 @@
+[nodejs]
+format = "[$symbol($version)](bold green)"
+version_format = "v${raw}"
