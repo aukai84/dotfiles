@@ -10,5 +10,7 @@ pfetch
 
 export VOLTA_FEATURE_PNPM=1
 
+pyenv init - | source
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/aukaitirrell/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/aukaitirrell/Downloads/google-cloud-sdk/path.fish.inc'; end
